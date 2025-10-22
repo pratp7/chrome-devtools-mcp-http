@@ -47,7 +47,7 @@ RUN apt-get update && apt-get install -y \
 ENV CHROME_BIN=/usr/bin/chromium
 
 # Install supergateway globally
-RUN npm install -g supergateway chrome-devtools-mcp
+RUN npm install -g supergateway
 
 # Set working directory
 WORKDIR /app
