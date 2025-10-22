@@ -34,6 +34,12 @@ RUN apt-get update && apt-get install -y \
     libxext6 \
     libxfixes3 \
     libxshmfence1 \
+    fonts-noto-color-emoji \
+    libxkbcommon0 \
+    libvulkan1 \
+    libgconf-2-4 \
+    libexif12 \
+    xdg-utils \
     wget \
  && rm -rf /var/lib/apt/lists/*
 
