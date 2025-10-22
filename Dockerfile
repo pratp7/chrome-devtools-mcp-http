@@ -60,6 +60,7 @@ RUN chmod +x /entrypoint.sh
 
 # Expose port for MCP server
 EXPOSE 8000
+EXPOSE 9222
 
 # Start the MCP server
 CMD ["/entrypoint.sh"]

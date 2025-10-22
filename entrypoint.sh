@@ -8,7 +8,7 @@ echo "Chromium version: $($CHROME_BIN --version)"
 PORT=${PORT:-8000}
 
 $CHROME_BIN \
-  --headless=new \
+  --headless=true \
   --no-sandbox \
   --disable-gpu \
   --disable-dev-shm-usage \
@@ -23,8 +23,7 @@ $CHROME_BIN \
   done
 
 supergateway --stdio "npx -y chrome-devtools-mcp@latest \
-  --browserUrl='ws://localhost:9222' \
-  --isolated" \
+  --browserUrl='ws://localhost:9222'" \
   --outputTransport streamableHttp \
   --stateful \
   --sessionTimeout 60000 \
