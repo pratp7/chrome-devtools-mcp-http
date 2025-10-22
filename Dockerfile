@@ -1,4 +1,3 @@
-# ...existing code...
 FROM node:20
 WORKDIR /app
 COPY . .
@@ -28,4 +27,4 @@ RUN apt-get update && apt-get install -y \
 RUN npm install -g supergateway
 ENV CHROME_BIN=/usr/bin/chromium
 EXPOSE 8000
-CMD ["sh", "-c", "supergateway --stdio 'npx -y chrome-devtools-mcp@latest --headless=true --no-sandbox' --outputTransport streamableHttp --stateful --sessionTimeout 60000 --port ${PORT:-8000}"]
+CMD ["sh", "-c", "supergateway --host 0.0.0.0 --stdio 'npx -y chrome-devtools-mcp@latest --headless=true' --outputTransport streamableHttp --stateful --sessionTimeout 60000 --port ${PORT:-8000}"]
