@@ -14,6 +14,8 @@ RUN npm install -g supergateway
 
 WORKDIR /app
 
+COPY . .
+
 # Expose the port (Railway sets $PORT)
 EXPOSE 8000
 
