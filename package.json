@@ -1,0 +1,10 @@
+{
+	"name": "chrome-devtools-mcp-http",
+	"version": "1.0.0",
+	"description": "Chrome DevTools MCP HTTP server via supergateway",
+	"main": "start.sh",
+	"scripts": {
+		"start": "sh ./start.sh"
+	},
+	"license": "MIT"
+}
