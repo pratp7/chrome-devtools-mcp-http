@@ -2,7 +2,6 @@ FROM node:20-slim
 
 # install chromium and required libs for headless chrome
 RUN apt-get update && apt-get install -y \
-    chromium \
     chromium-browser \
     ca-certificates \
     fonts-liberation \
@@ -29,8 +28,6 @@ RUN apt-get update && apt-get install -y \
     libxdamage1 \
     libxss1 \
     libxtst6 \
-    libxext6 \
-    libxfixes3 \
     wget \
  && rm -rf /var/lib/apt/lists/*
 RUN npm install -g supergateway
