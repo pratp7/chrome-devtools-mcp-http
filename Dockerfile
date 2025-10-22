@@ -1,5 +1,5 @@
 # Use Node.js 20 slim base
-FROM node:20-slim
+FROM node:20-alpine
 
 # Install Chromium and required dependencies
 RUN apt-get update && apt-get install -y \
