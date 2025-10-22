@@ -7,7 +7,7 @@ echo "Chromium version: $($CHROME_BIN --version)"
 
 PORT=${PORT:-8000}
 
-supergateway --stdio "npx -y chrome-devtools-mcp@latest \
+supergateway --stdio "chrome-devtools-mcp \
   --headless=true \
   --executablePath=$CHROME_BIN \
   --chromeFlags='--no-sandbox --disable-dev-shm-usage --disable-gpu --ignore-certificate-errors --allow-insecure-localhost --remote-debugging-port=9222 --remote-debugging-address=0.0.0.0'" \
