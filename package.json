@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "scripts": {
+    "start": "supergateway --stdio \"npx -y chrome-devtools-mcp@latest --headless=true\" --outputTransport streamableHttp --stateful --sessionTimeout 60000 --port $PORT"
+  },
+  "dependencies": {
+    "supergateway": "^3.4.3"
+  }
+}
