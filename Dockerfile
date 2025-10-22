@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
     libxi6 \
     libxdamage1 \
     libxss1 \
-    libxtst6
+    libxtst6 \
     wget \
  && rm -rf /var/lib/apt/lists/*
 RUN npm install -g supergateway
