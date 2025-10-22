@@ -1,16 +1,30 @@
 FROM node:20-slim
 
-# Install Chrome dependencies
-RUN apt-get update && \
-    apt-get install -y wget gnupg2 && \
-    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
-    sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && \
-    apt-get update && \
-    apt-get install -y google-chrome-stable && \
-    rm -rf /var/lib/apt/lists/*
-
-# Install supergateway globally
+# install chromium and required libs for headless chrome
+RUN apt-get update && apt-get install -y \
+    chromium \
+    ca-certificates \
+    fonts-liberation \
+    libasound2 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libc6 \
+    libcairo2 \
+    libdbus-1-3 \
+    libexpat1 \
+    libfontconfig1 \
+    libgbm1 \
+    libgdk-pixbuf2.0-0 \
+    libglib2.0-0 \
+    libgtk-3-0 \
+    libnspr4 \
+    libnss3 \
+    libpango-1.0-0 \
+    libstdc++6 \
+    wget \
+ && rm -rf /var/lib/apt/lists/*
 RUN npm install -g supergateway
+ENV CHROME_BIN=/usr/bin/chromium
 
 WORKDIR /app
 
@@ -20,4 +34,4 @@ COPY . .
 EXPOSE 8000
 
 # Start the server
-CMD supergateway --stdio "npx -y chrome-devtools-mcp@latest --headless=true" --outputTransport streamableHttp --stateful --sessionTimeout 60000 --port ${PORT:-8000}
+CMD supergateway --stdio "npx -y chrome-devtools-mcp@latest --headless=true --chrome-flags='--no-sandbox --disable-dev-shm-usage'" --outputTransport streamableHttp --stateful --sessionTimeout 60000 --port ${PORT:-8000}
