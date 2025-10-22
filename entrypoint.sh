@@ -10,7 +10,7 @@ PORT=${PORT:-8000}
 supergateway --stdio "npx -y chrome-devtools-mcp@latest \
   --headless=true \
   --executablePath=$CHROME_BIN \
-  --chromeFlags='--no-sandbox --disable-dev-shm-usage --disable-gpu --remote-debugging-port=9222 --remote-debugging-address=0.0.0.0'" \
+  --chromeFlags='--no-sandbox --disable-dev-shm-usage --disable-gpu --ignore-certificate-errors --allow-insecure-localhost --remote-debugging-port=9222 --remote-debugging-address=0.0.0.0'" \
   --outputTransport streamableHttp \
   --stateful \
   --sessionTimeout 60000 \
