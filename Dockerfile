@@ -41,6 +41,7 @@ RUN apt-get update && apt-get install -y \
     libexif12 \
     xdg-utils \
     wget \
+    curl \
  && rm -rf /var/lib/apt/lists/*
 
 # Set environment variable for Chromium binary
