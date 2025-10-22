@@ -29,9 +29,11 @@ ENV CHROME_BIN=/usr/bin/chromium
 WORKDIR /app
 
 COPY . .
+COPY entrypoint.sh /entrypoint.sh
 
 # Expose the port (Railway sets $PORT)
 EXPOSE 8000
 
 # Start the server
-CMD supergateway --stdio "npx -y chrome-devtools-mcp@latest --headless=true --chrome-flags='--no-sandbox --disable-dev-shm-usage' --chrome-executable-path=/usr/bin/chromium" --outputTransport streamableHttp --stateful --sessionTimeout 60000 --port ${PORT:-8000}
+RUN chmod +x /entrypoint.sh
+CMD ["/entrypoint.sh"]
