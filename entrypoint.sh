@@ -1,2 +1,2 @@
 #!/bin/sh
-supergateway --stdio "npx -y chrome-devtools-mcp@latest --headless=true --chrome-flags='--no-sandbox --disable-dev-shm-usage' --chrome-executable-path=/usr/bin/chromium" --outputTransport streamableHttp --stateful --sessionTimeout 60000 --port ${PORT:-8000}
+supergateway --stdio "npx -y chrome-devtools-mcp@latest --headless=true --executablePath=/usr/bin/chromium --chrome-flags='--no-sandbox --disable-dev-shm-usage'" --outputTransport streamableHttp --stateful --sessionTimeout 60000 --port ${PORT:-8000}
