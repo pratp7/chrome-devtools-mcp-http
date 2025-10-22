@@ -21,6 +21,13 @@ RUN apt-get update && apt-get install -y \
     libnss3 \
     libpango-1.0-0 \
     libstdc++6 \
+    libx11-xcb1 \
+    libxcomposite1 \
+    libxrandr2 \
+    libxi6 \
+    libxdamage1 \
+    libxss1 \
+    libxtst6
     wget \
  && rm -rf /var/lib/apt/lists/*
 RUN npm install -g supergateway
