@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y \
     libfontconfig1 \
     libgbm1 \
     libgdk-pixbuf2.0-0 \
+    libgl1 \
+    libegl1 \
     libglib2.0-0 \
     libgtk-3-0 \
     libnspr4 \
@@ -31,6 +33,7 @@ RUN apt-get update && apt-get install -y \
     libxtst6 \
     libxext6 \
     libxfixes3 \
+    libxshmfence1 \
     wget \
  && rm -rf /var/lib/apt/lists/*
 

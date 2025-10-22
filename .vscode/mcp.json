@@ -1,0 +1,8 @@
+{
+    "servers": {
+         "chrome-devtools": {
+			      "type": "http",
+			      "url": "https://chrome-devtools-mcp-http-production.up.railway.app/mcp"
+		  },
+    },
+}
