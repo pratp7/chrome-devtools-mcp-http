@@ -23,7 +23,7 @@ $CHROME_BIN \
   done
 
 supergateway --stdio "npx -y chrome-devtools-mcp@latest \
-  --browserUrl='ws://localhost:9222'" \
+  --browserUrl='http://localhost:9222'" \
   --outputTransport streamableHttp \
   --stateful \
   --sessionTimeout 60000 \
