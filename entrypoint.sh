@@ -23,6 +23,6 @@ $CHROME_BIN \
   done
 
 supergateway --stdio "npx -y chrome-devtools-mcp@latest --browserUrl='http://localhost:9222'" \
-  --outputTransport statelessHttp \
+  --outputTransport streamableHttp \
   --port 8000 \
   --path /mcp
